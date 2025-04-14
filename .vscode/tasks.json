@@ -1,0 +1,61 @@
+{
+    
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/MF_PSD2.sln",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "run",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "run",
+                "--project",
+                "${workspaceFolder}/WebApiTemplate/WebApiTemplate.csproj",
+                "/property:GenerateFullPaths=true"
+            ],
+            "options": {
+                "env": {
+                    "ASPNETCORE_ENVIRONMENT": "Development"
+                }
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch run",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "--project",
+                "${workspaceFolder}/WebApiTemplate/WebApiTemplate.csproj",
+                "run",
+                "--no-hot-reload",
+                "/property:GenerateFullPaths=true"
+            ],
+            "options": {
+                "env": {
+                    "ASPNETCORE_ENVIRONMENT": "Development"
+                }
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "filter",
+            "type": "promptString",
+            "description": "filter tests by this pattern"
+        }
+    ]
+}

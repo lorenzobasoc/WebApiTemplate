@@ -1,0 +1,7 @@
+{
+    "dotnet.unitTestDebuggingOptions": {
+        "env": {
+            "ASPNETCORE_ENVIRONMENT": "Test"
+        }
+    }
+}
